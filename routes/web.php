@@ -17,15 +17,18 @@ use App\Http\Controllers\LoginController;
 
 
 // Uji coba Website
-Route::get('confirm', function () {
-    return view('contact.hasCreate');
 
-});
 
 
 // Route Login dan Pendaftaran
 Route::get('/', [RegisterController::class, 'create']);
+Route::resource('register', RegisterController::class);
+
+
 Route::get('/login', [LoginController::class, 'index']);
+Route::post('/welcome', [LoginController::class, 'check'])->name('check');
+
+// Route::post('register', [RegisterController::class, 'store'])->name('register');
 
 
-Route::post('register', [RegisterController::class, 'store'])->name('register');
+// Route::resource('login', LoginController::class);
