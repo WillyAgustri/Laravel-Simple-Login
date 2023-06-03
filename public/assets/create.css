@@ -67,3 +67,7 @@ body {
     color: rgba(255, 250, 250, 0.601);
     opacity: 1;
 }
+
+input {
+    color: white;
+}
