@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\RegisterController;
-use app\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,17 @@ use app\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('contact.create');
+
+// Uji coba Website
+Route::get('confirm', function () {
+    return view('contact.hasCreate');
+
 });
 
-Route::get('/home',[RegisterController::class,'create']);
+
+// Route Login dan Pendaftaran
+Route::get('/', [RegisterController::class, 'create']);
+Route::get('/login', [LoginController::class, 'index']);
+
+
+Route::post('register', [RegisterController::class, 'store'])->name('register');

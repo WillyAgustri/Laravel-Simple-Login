@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background-image: url("img/background.jpg");
+    background-size: cover; /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: "PT Sans", sans-serif;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+}
+
+.nav {
+    color: white;
+    text-decoration: none;
+    color: inherit;
+    padding: 4px;
+}
+
+.login-form {
+    border-radius: 20px;
+    padding: 5rem;
+    width: 100%;
+}
+
+.glass-effect {
+    backdrop-filter: blur(5px) brightness(70%) saturate(120%);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.glass-effect h1,
+.glass-effect h2,
+.glass-effect p {
+    color: #fff;
+}
+
+.submit {
+    width: 10rem;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    background: rgba(10, 41, 165, 0.429);
+}
+
+.submit:hover {
+    color: rgb(252, 252, 252);
+    background: rgba(87, 186, 34, 0.675);
+}
+
+.input-field {
+    border-radius: 10px;
+    width: 20rem;
+    height: 3rem;
+}
+
+::placeholder {
+    color: rgba(255, 250, 250, 0.601);
+    opacity: 1;
+}

@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Hash;
-use App\Models\Register;
-use App\Models\User;
+use App\Models\Login;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('contact.login');
     }
 
     /**
@@ -22,7 +20,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('contact.create');
+        //
     }
 
     /**
@@ -30,21 +28,13 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $input =$request->all();
-
-        User::create([
-            'name' => $input['nama_user'],
-            'email'=> $input['email_user'],
-            'password'=> Hash::make($input['password_user'])
-        ]);
-        return view('contact.hasCreate');
-
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Register $register)
+    public function show(Login $login)
     {
         //
     }
@@ -52,7 +42,7 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Register $register)
+    public function edit(Login $login)
     {
         //
     }
@@ -60,7 +50,7 @@ class RegisterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Register $register)
+    public function update(Request $request, Login $login)
     {
         //
     }
@@ -68,7 +58,7 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Register $register)
+    public function destroy(Login $login)
     {
         //
     }
