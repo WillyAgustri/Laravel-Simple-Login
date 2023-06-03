@@ -6,24 +6,27 @@
 
             <h1>Daftar Akun</h1>
 
-            <form action="{{ route('register') }}" method="POST">
+            <form action="{{ url('register') }}" method="POST">
                 @csrf
                 <div class="input-email">
                     <br>Nama Pengguna</br>
-                    <input class="input-field glass-effect" name="nama_user" type="text" placeholder="Masukan Nama Lengkap">
+                    <input class="input-field glass-effect" name="nama_user" type="text" placeholder="Masukan Nama Lengkap"
+                        @required(true)>
                 </div>
 
                 <div class="input-email">
                     <br>Email Address</br>
-                    <input class="input-field glass-effect" name="email_user" type="text" placeholder="Masukan Email">
+                    <input class="input-field glass-effect" name="email_user" type="email" placeholder="Masukan Email"
+                        @required(true)>
                 </div>
                 <div class="input-password ">
                     <br>Password</br>
-                    <input class="input-field glass-effect" name="password_user" type="text"
-                        placeholder="Masukan Password">
+                    <input class="input-field glass-effect" name="password_user" type="password"
+                        placeholder="Masukan Password" @required(true)>
                 </div>
                 <div class="login-button d-flex justify-content-center mt-3 mb-2">
-                    <input name="submit" id="" class="submit btn btn-sm" type="submit" value="Daftar">
+                    <input name="submit" id="" class="submit btn btn-sm" type="submit" value="Daftar"
+                        @required(true)>
                 </div>
                 <div>
                     Atau
