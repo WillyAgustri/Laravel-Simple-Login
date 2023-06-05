@@ -26,8 +26,14 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email' => 'required','email',
             'password' =>'required',
+        ],
 
-        ]);
+        // ** Keterangan Input Kosong **
+
+        ['email.required' => 'Harap Masukan Email Anda!',
+        'password.required' => 'Harap Masukan Password Anda!',
+        ]
+        );
 
 
 
@@ -37,7 +43,14 @@ class LoginController extends Controller
             return view('contact.welcome');
         }
 
-        return "<h2>Gagal Login</h2>";
+        else{
+            return back()->withErrors([
+                'email' => 'Email yang anda masukan salah!',
+                'password' => 'Password yang anda masukan salah!',
+            ])->withInput();
+        }
+
+
     }
 
     /**
