@@ -30,14 +30,29 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $input =$request->all();
+        $validate = $request-> validate([
+            'nama_user' => 'required','min:3','max:30',
+            'email_user'=> 'required','email',
+            'password_user'=> 'required','min:8','confirmed'
 
-        User::create([
-            'name' => $input['nama_user'],
-            'email'=> $input['email_user'],
-            'password'=> Hash::make($input['password_user'])
-        ]);
-        return view('contact.hasCreate');
+        ]
+        );
+
+        if ($validate){
+
+            // MMembuat Input Ke Database
+            $input =$request->all();
+
+            User::create([
+                'name' => $input['nama_user'],
+                'email'=> $input['email_user'],
+                'password'=> Hash::make($input['password_user'])
+            ]);
+            return view('contact.hasCreate');
+
+
+
+        }
 
     }
 
@@ -71,5 +86,7 @@ class RegisterController extends Controller
     public function destroy(Register $register)
     {
         //
-    }
+
+   }
 }
+
