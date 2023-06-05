@@ -12,12 +12,34 @@
 
                 <div class="input-email">
                     <br>Email Address</br>
-                    <input class="input-field glass-effect" name="email" type="email" placeholder="Masukan Email">
+                    <input class="form-control @error('email') is-invalid @enderror input-field glass-effect" name="email"
+                        type="email" placeholder="Masukan Email" value="{{ old('email') }}">
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
-                <div class="input-password ">
-                    <br>Password</br>
-                    <input class="input-field glass-effect" name="password" type="password" placeholder="Masukan Password">
+                <div class="input-password">
+                    <br>
+                    <label for="password">
+                        Password
+                    </label>
+                    </br>
+                    <input id="password"
+                        class="form-control @error('password') is-invalid @enderror input-field glass-effect"
+                        name="password" type="password" placeholder="Masukan Password" value="{{ old('password') }}">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
+
+
+
+
+
                 <div class="login-button d-flex justify-content-center mt-3 mb-2">
                     <input name="submit" class="submit btn btn-sm" type="submit" value="Login">
                 </div>
